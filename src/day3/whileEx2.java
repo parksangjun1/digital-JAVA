@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class whileEx2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		// do while 무조건 한번은 실행된다.
 		int menu = 4;
 		Scanner scan = new Scanner(System.in);
 		
