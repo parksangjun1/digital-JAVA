@@ -1,0 +1,34 @@
+package day4;
+
+public class practiceEx3 {
+
+	public static void main(String[] args) {
+		/* 정수 10개짜리 배열에 값을 랜덤으로 생성하여 저장하고(중복가능)
+		 * 저장된 배열 값 중에서 가장 큰값과 가장 작은 값을 출력하는 코드를 작성하세요.
+		 */
+		int arr[] = new int[10];
+		int rmax = 10;
+		int rmin = 1;
+		int min,max;
+		
+		for(int i = 0; i < arr.length; i++ ) {
+			arr[i] = (int)(Math.random()*(rmax-rmin+1)) + rmin;			
+		}
+		
+		for(int tmp:arr) {
+			System.out.printf("%d ",tmp);
+		}
+		System.out.println();
+		
+		min = max = arr[0];   //min과 max의 값을 0번지에 넣어준다.
+		for(int i = 1; i < arr.length; i++) {
+			if(arr[i] > max) {
+				max = arr[i];
+			}
+			if(min > arr[i]) {
+				min = arr[i];				
+			}						 										
+		}System.out.printf("가장 큰값 : %d , 가장 작은값 : %d\n", max, min);
+		
+	}
+}
