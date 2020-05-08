@@ -1,6 +1,6 @@
 package Student;
 
-public class Subject {
+public class Subject {//
 	private String title;
 	private int midterm;
 	private int finals;

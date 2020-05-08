@@ -6,12 +6,20 @@ public class Student{
 	private int classNum;
 	private int num;
 	private Subject[] score;
+	
 
 	public boolean equal(int grade, int classNum, int num, String name) {
 		if(this.grade != grade) return false;
 		if(this.classNum != classNum) return false;
 		if(this.num != num) return false;
 		if(!this.name.equals(name)) return false;
+		return true;
+		
+	}
+	public boolean equal(Student s) {
+		if(this.grade != s.grade) return false;
+		if(this.classNum != s.classNum) return false;
+		if(this.num != s.num) return false;		
 		return true;
 		
 	}
@@ -47,9 +55,28 @@ public class Student{
 		}
 		
 	}
+	public Subject[] getScore() {
+		return score;
+	}
 	public void printScore() {
+		if(score == null) return;
 		for(Subject tmp : score) {
 			tmp.print();
 		}
+	}
+	public void addScore(Subject[] addscore) {
+		//과목배열이 꽉차있어서 배열을 추가해야한다.
+		int aSize = 0, bSize = 0;
+		if(score != null) aSize = score.length;
+		if(addscore != null)bSize = addscore.length;
+		Subject []tmp = new Subject[aSize + bSize];
+		
+		for(int i = 0; i < aSize; i++) {
+			tmp[i] = score[i];
+		}
+		for(int j = 0; j<bSize; j++) {
+			tmp[aSize+j] = addscore[j]; 
+		}
+		score = tmp;
 	}
 }	
